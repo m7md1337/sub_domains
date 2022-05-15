@@ -10,3 +10,21 @@
 * - d domain - a apikey 
 * -o will save the data in url format like 80 for http will be http://url:80/blabla see ``` https://github.com/m7md1337/sub_domains/blob/main/custom-github.com-2022-05-15%2016:43:18.txt```
 * it could be ftp://url:21 
+* ex
+
+ ```
+ python3 main.py -d github.com  -o 80,http/443,https/8008,http/8080,http/8443,https -p 80,443,8008,8080,8443
+```
+
+without -p will scan the defuelt port 443,80
+ ```
+ python3 main.py -d github.com  
+```
+*
+ ```
+ python3 main.py -d github.com  -a LsNSr90eEHHZOf1blYLXR09fMmLjjNhx -p 80,443,8008,8080,8443
+```
+*
+ ```
+ python3 main.py -d github.com  -a LsNSr90eEHHZOf1blYLXR09fMmLjjNhx -o 80,http/443,https 
+```
