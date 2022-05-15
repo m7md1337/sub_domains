@@ -1,5 +1,5 @@
 # sub_domains
-### find subdomains by using archive.com and securitytrails.com and customize the results
+### find subdomains by using archive.com and securitytrails.com with customizing the results
 * install the requests library ``` pip install requests ```
 * create a free account in securitytrails.com required email to activate the account then take the apikey to use the full tool
 * if you do not have apikey the tools will use the results from archive only also if the apikey is wrong will use archive only
