@@ -132,7 +132,7 @@ def main(): # define args
                 file.write(xx + "\n")
             file.close()
             print("custom file saved with name: " + name)
-    name = "{}-{}.txt".format(domain, datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+    name = "{}-{}.txt".format(domain, datetime.datetime.now().strftime("%Y-%m-%d+%H:%M:%S"))
     if livedomains:
         file = open(name, "+a")
         for xx in livedomains:
