@@ -126,7 +126,7 @@ def main(): # define args
                 pass
     if savefile:
         if customelivedomains:
-            name = "custom-{}-{}.txt".format(domain, datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+            name = "custom-{}-{}.txt".format(domain, datetime.datetime.now().strftime("%Y-%m-%d+%H:%M:%S"))
             file = open(name, "+a")
             for xx in customelivedomains:
                 file.write(xx + "\n")
