@@ -41,8 +41,8 @@ def port_scan(host, ports):
             if result == 0:  # if open
                 openports.append(port)  # insert into livedomains
                 if outdict:  # if users use option -o
-                    if outdict[port]:  # if the port key has value will save into  customelivedomains
-                        customelivedomains.append("{}://{}:{}".format(outdict[port], host, port))
+                    if outdict[str(port)]:  # if the port key has value will save into  customelivedomains
+                        customelivedomains.append("{}://{}:{}".format(outdict[str(port)], host, port))
                 livedomains.append("{}:{}".format(host,
                                                   port))  # from if result == 0: direct to here if none of above condition executed
             s.close()
@@ -107,7 +107,7 @@ def main(): # define args
             fiee = "result will in file {domain}-data.txt" # if -o option used
             dd = [x.split(",") for x in savefile.split("/")] # split the input
             for xx in dd:
-                outdict[xx[0]] = xx[1] # add to outdict
+                outdict[xx[1]] = xx[0] # add to outdict
     except Exception:
         parser_error("error")
     print(fiee)
