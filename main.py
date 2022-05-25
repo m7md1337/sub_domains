@@ -107,7 +107,7 @@ def main(): # define args
             fiee = "result will in file {domain}-data.txt" # if -o option used
             dd = [x.split(",") for x in savefile.split("/")] # split the input
             for xx in dd:
-                outdict[xx[1]] = xx[0] # add to outdict
+                outdict[xx[0]] = xx[1] # add to outdict
     except Exception:
         parser_error("error")
     print(fiee)
