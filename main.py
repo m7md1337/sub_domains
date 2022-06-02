@@ -262,7 +262,7 @@ def main(): # define args
             ee = open(endpoints, "+r").read().splitlines()
         except Exception:
             exit("error : no file called {}".format(filefrominput))
-        input(f"{bcolors.OKBLUE}[to jump to next url enter Ctrl + c , to stop enter ctrl + c two times  ] -- please enter Enter to start {bcolors.ENDC}")
+        input(f"{bcolors.OKBLUE}[to jump to next url enter Ctrl + c and enter m , to stop enter ctrl + c and enter k  ] -- please enter Enter to start {bcolors.ENDC}")
         for xx in customelivedomains:
             try:
                 print(f"{bcolors.def1}starting on url : " + xx + "\n "f"{bcolors.ENDC}")
