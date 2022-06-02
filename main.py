@@ -117,21 +117,11 @@ def ss(url, endpoints, follow):
                 if len(re.text) != 0:
                     tree = fromstring(re.content)
                     if tree.findtext('.//title') is not None:
-                        return f"{bcolors.conv(re.status_code)}", "originUrl: " + url + endpoints + " ,TheRedirectUrl: " + re.url if follow else "URl: " + re.url, " ,titel: ", tree.findtext(
-                            './/title').replace("\n", "").replace("\r",
-                                                                  ""), " ,status: ", re.status_code, " ,redirect to :" + \
-                                                                                                     re.headers[
-                                                                                                         'Location'] + {
-                                                                                                         bcolors.ENDC} if "location" in re.headers else f"{bcolors.ENDC} "
+                        return f"{bcolors.conv(re.status_code)}", "originUrl: " + url + endpoints + " ,TheRedirectUrl: " + re.url if re.history else "URl: " + re.url, " ,titel: ", tree.findtext('.//title').replace("\n", "").replace("\r",""), " ,status: ", re.status_code, " ,redirect to :" + re.headers['Location'] + {bcolors.ENDC} if "location" in re.headers else f"{bcolors.ENDC} "
                     else:
-                        return f"{bcolors.conv(re.status_code)}", "from originUrl: " + url + endpoints + " ,To TheRedirectUrl: " + re.url if follow else "URl: " + re.url, " ,status: ", re.status_code, " ,redirect to :" + \
-                                                                                                                                                                                                         re.headers[
-                                                                                                                                                                                                             'Location'] + {
-                                                                                                                                                                                                             bcolors.ENDC} if "location" in re.headers else f"{bcolors.ENDC} "
+                        return f"{bcolors.conv(re.status_code)}", "from originUrl: " + url + endpoints + " ,To TheRedirectUrl: " + re.url if re.history else "URl: " + re.url, " ,status: ", re.status_code, " ,redirect to :" +re.headers['Location'] + {bcolors.ENDC} if "location" in re.headers else f"{bcolors.ENDC} "
                 else:
-                    return f"{bcolors.conv(re.status_code)}cool: ", url + endpoints, "too: ", re.url, "status:", re.status_code, "redirect to :" + \
-                                                                                                                                 re.headers[
-                                                                                                                                     'Location'] if "location" in re.headers else f"{bcolors.ENDC}"
+                    return f"{bcolors.conv(re.status_code)}", "originUrl: " + url + endpoints + " ,TheRedirectUrl: " + re.url if re.history else "URl: " + re.url, " ,status: ", re.status_code, " ,redirect to :" + re.headers['Location'] + {bcolors.ENDC} if "location" in re.headers else f"{bcolors.ENDC} "
             else:
                 pass
         except Exception as e:
@@ -262,7 +252,7 @@ def main(): # define args
             ee = open(endpoints, "+r").read().splitlines()
         except Exception:
             exit("error : no file called {}".format(filefrominput))
-        input(f"{bcolors.OKBLUE}[to jump to next url enter Ctrl + c and enter m , to stop enter ctrl + c and enter k  ] -- please enter Enter to start {bcolors.ENDC}")
+        input(f"{bcolors.OKBLUE}[to jump to next url enter Ctrl + c , to stop enter ctrl + c two times  ] -- please enter Enter to start {bcolors.ENDC}")
         for xx in customelivedomains:
             try:
                 print(f"{bcolors.def1}starting on url : " + xx + "\n "f"{bcolors.ENDC}")
