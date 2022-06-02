@@ -1,5 +1,5 @@
-# sub_domains
-### find subdomains by using archive.com and securitytrails.com with customizing the results
+# sub_domains v0.2
+### find subdomains by using web.archive.org and securitytrails.com with customizing the results
 * install the requests library ``` pip install requests ```
 * create a free account in securitytrails.com required email to activate the account then take the apikey to use the full tool
 * if you do not have apikey the tools will use the results from archive only also if the apikey is wrong will use archive only
@@ -20,11 +20,10 @@ without -p will scan the defuelt port 443,80
  ```
  python3 main.py -d github.com  
 ```
-*
  ```
  python3 main.py -d github.com  -a LsNSr90eEHHZOf1blYLXR09fMmLjjNhx -p 80,443,8008,8080,8443
 ```
-*
  ```
  python3 main.py -d github.com  -a LsNSr90eEHHZOf1blYLXR09fMmLjjNhx -o 80,http/443,https 
 ```
+
