@@ -1,0 +1,6 @@
+admin
+login
+register
+restpassword
+signup
+signin
